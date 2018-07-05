@@ -34,5 +34,5 @@ public @interface ProvidedBy {
   /**
    * The implementation type.
    */
-//  Class<? extends javax.inject.Provider<?>> value();
+  Class<? extends javax.inject.Provider<?>> value();
 }
