@@ -27,10 +27,15 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.eclipse.jetty.orbit</groupId>-->
+            <!--<artifactId>org.objectweb.asm</artifactId>-->
+            <!--<version>3.1.0.v200803061910</version>-->
+        <!--</dependency>-->
         <dependency>
-            <groupId>org.eclipse.jetty.orbit</groupId>
-            <artifactId>org.objectweb.asm</artifactId>
-            <version>3.1.0.v200803061910</version>
+            <groupId>org.objectweb.asm</groupId>
+            <artifactId>com.springsource.org.objectweb.asm</artifactId>
+            <version>3.2.0</version>
         </dependency>
         <dependency>
             <groupId>cglib</groupId>
