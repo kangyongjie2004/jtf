@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jtf_extension</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>trade_lifeservice_rest</module>
+        <module>trade_lifeservice_toc</module>
+        <module>trade_lifeservice_ump</module>
+    </modules>
 
 
 </project>

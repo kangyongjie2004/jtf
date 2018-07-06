@@ -126,7 +126,7 @@ final class LineNumbers {
     /*if[NO_AOP]
     return "<NO_MEMBER_KEY>";
     end[NO_AOP]*/
-  }  
+  }
 
   private class LineNumberReader extends ClassVisitor {
 

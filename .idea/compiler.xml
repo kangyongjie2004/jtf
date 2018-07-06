@@ -6,10 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jtf_extension" />
-        <module name="jtf_platform" />
-        <module name="jtf_trade" />
+        <module name="platform_common" />
+        <module name="platform_core" />
+        <module name="platform_integration" />
+        <module name="platform_runtime" />
+        <module name="platform_web" />
+        <module name="trade_domain" />
+        <module name="trade_lifeservice_rest" />
+        <module name="trade_lifeservice_toc" />
+        <module name="trade_lifeservice_ump" />
+        <module name="trade_toc" />
+        <module name="trade_ump" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="platformcore" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,19 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>jtf</artifactId>
+        <artifactId>jtf_trade</artifactId>
         <groupId>com.jd.jtf</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jtf_trade</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>trade_domain</module>
-        <module>trade_toc</module>
-        <module>trade_ump</module>
-    </modules>
+    <artifactId>trade_toc</artifactId>
 
 
 </project>
