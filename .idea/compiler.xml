@@ -15,6 +15,7 @@
         <module name="trade_lifeservice_rest" />
         <module name="trade_lifeservice_toc" />
         <module name="trade_lifeservice_ump" />
+        <module name="trade_route" />
         <module name="trade_toc" />
         <module name="trade_ump" />
       </profile>
