@@ -10,6 +10,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jtf_platform</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>platform_common</module>
+        <module>platform_core</module>
+        <module>platform_integration</module>
+        <module>platform_runtime</module>
+        <module>platform_web</module>
+    </modules>
 
 
 </project>
