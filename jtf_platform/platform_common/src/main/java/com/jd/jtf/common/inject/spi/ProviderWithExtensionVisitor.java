@@ -16,6 +16,7 @@
 
 package com.jd.jtf.common.inject.spi;
 
+import com.google.inject.spi.BindingTargetVisitor;
 import com.jd.jtf.common.inject.Binding;
 import com.jd.jtf.common.inject.Provider;
 
