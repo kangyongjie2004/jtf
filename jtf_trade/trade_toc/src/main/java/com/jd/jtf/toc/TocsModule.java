@@ -7,7 +7,6 @@ import com.google.inject.Inject;
 import com.google.inject.Module;
 import com.jd.jtf.toc.general.GeneralTocModule;
 import com.jd.jtf.toc.virtual.VirtualTocModule;
-import com.sun.scenario.Settings;
 
 import java.util.Map;
 

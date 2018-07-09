@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>jtf_platform</module>
+        <!--<module>jtf_platform</module>-->
         <module>jtf_trade</module>
         <module>jtf_extension</module>
         <module>demo</module>
@@ -51,7 +51,11 @@
             <version>2.22.0</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
+        </dependency>
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
