@@ -6,7 +6,9 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 import org.eclipse.core.runtime.PlatformObject;
+import org.springframework.stereotype.Service;
 
+@Service("order")
 public class Order extends PlatformObject implements IOrder{
 
     private List<OrderItem> orderItems = new ArrayList<OrderItem>();
@@ -19,9 +21,16 @@ public class Order extends PlatformObject implements IOrder{
 
     private final Map<String, Object> attributes = Maps.newHashMap();
 
-    public Order(String type, int number) {
-        this.type= type;
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public void setNumber(int number) {
         this.number = number;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getType() {

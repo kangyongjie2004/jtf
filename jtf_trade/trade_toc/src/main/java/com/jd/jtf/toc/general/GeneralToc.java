@@ -1,21 +1,11 @@
 package com.jd.jtf.toc.general;
 
-import com.google.inject.Inject;
 import com.jd.jtf.domain.order.IOrder;
-import com.jd.jtf.toc.AbstractTocComponent;
 import com.jd.jtf.toc.Toc;
-import com.jd.jtf.toc.TocName;
-import com.jd.jtf.toc.TocSettings;
+import org.springframework.stereotype.Service;
 
-public class GeneralToc extends AbstractTocComponent implements Toc {
-
-    final TocSettings settings;
-
-    @Inject
-    public GeneralToc(TocName tocName, TocSettings settings) {
-        super(tocName, settings);
-        this.settings = settings;
-    }
+@Service
+public class GeneralToc  implements Toc {
 
     @Override
     public void setOrderConsignmentTimeout(IOrder order) {

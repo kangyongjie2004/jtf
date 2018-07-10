@@ -1,20 +1,27 @@
 package com.jd.jtf.toc;
-import com.google.inject.Inject;
+
 import com.jd.jtf.domain.order.IOrder;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.IAdapterManager;
 import org.eclipse.core.runtime.Platform;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+
+@Service
 public class TocAdapterFactory implements IAdapterFactory {
 
-    private final TocsService tocsService;
-    @Inject
-    public TocAdapterFactory(TocsService tocsService) {
-        this.tocsService = tocsService;
+    @Resource
+    public TocsService tocsService;
+
+
+    @PostConstruct
+    public void init() {
         IAdapterManager manager = Platform.getAdapterManager();
         manager.registerAdapters(this, IOrder.class);
-
     }
+
 
     @Override
     public Object getAdapter(Object adaptableObject, Class adapterType) {

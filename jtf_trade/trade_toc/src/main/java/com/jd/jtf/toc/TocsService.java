@@ -2,20 +2,21 @@ package com.jd.jtf.toc;
 
 import com.jd.jtf.toc.general.GeneralToc;
 import com.jd.jtf.toc.virtual.VirtualToc;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
+@Service
 public class TocsService {
 
+    @Resource
+    private GeneralToc generalToc;
+    @Resource
+    private VirtualToc virtualToc;
 
-    static Toc generalToc = null;
-    static Toc virtualToc = null;
+
     static String type_general = "general";
     static String type_virtual = "virtual";
-
-    static {
-
-        generalToc = new GeneralToc(new TocName(type_general), new TocSettings());
-        virtualToc = new VirtualToc(new TocName(type_virtual), new TocSettings());
-    }
 
     public Toc toc(String type) {
 

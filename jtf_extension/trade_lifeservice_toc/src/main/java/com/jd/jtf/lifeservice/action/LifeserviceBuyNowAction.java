@@ -15,8 +15,8 @@ public class LifeserviceBuyNowAction {
     @RequestMapping("/buy_general")
     public JSONObject handleRequest() {
 
-
-        Order order = new Order("lifeservice", 1);
+        Order order = null;
+//        Order order = new Order("lifeservice", 1);
         Toc toc = (Toc) order.getAdapter(Toc.class);
         toc.setOrderConfirmTimeout(order);
         toc.setOrderConsignmentTimeout(order);
