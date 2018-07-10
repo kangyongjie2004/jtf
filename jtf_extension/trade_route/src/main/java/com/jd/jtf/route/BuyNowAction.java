@@ -1,6 +1,7 @@
 package com.jd.jtf.route;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jd.jtf.domain.HelloService;
 import com.jd.jtf.domain.order.IOrder;
 import com.jd.jtf.toc.Toc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,16 @@ public class BuyNowAction {
     @Autowired
     private IOrder order;
 
+//    @Autowired
+//    private HelloService helloService;
+
     @ResponseBody
     @RequestMapping("/buy_general")
     public JSONObject handleRequest() {
 
 
 //        Order order = new Order("general", 1);
-
+//        System.out.println(helloService.hello());
         order.setType("general");
         //toc接口通过order的getAdapter的方式返回，在上面toc模快里TocAdapterFactory里，
         // 解释了会根据order的type类型，返回对应的实现，这里会返回GenrealToc的实现。
@@ -50,9 +54,5 @@ public class BuyNowAction {
 //        jo.put("promotion",promotion);
 
         return jo;
-    }
-
-    public void setOrder(IOrder order) {
-        this.order = order;
     }
 }
