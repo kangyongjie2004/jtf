@@ -1,6 +1,7 @@
 package com.jd.jtf.toc;
 
 import com.jd.jtf.domain.order.IOrder;
+import org.eclipse.core.internal.runtime.AdapterManager;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.IAdapterManager;
 import org.eclipse.core.runtime.Platform;
@@ -18,7 +19,9 @@ public class TocAdapterFactory implements IAdapterFactory {
 
     @PostConstruct
     public void init() {
-        IAdapterManager manager = Platform.getAdapterManager();
+
+//        IAdapterManager manager = Platform.getAdapterManager();
+        IAdapterManager manager = AdapterManager.getDefault();
         manager.registerAdapters(this, IOrder.class);
     }
 
