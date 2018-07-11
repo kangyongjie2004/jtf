@@ -65,4 +65,7 @@ public class Order extends PlatformObject implements IOrder{
         this.price = price;
     }
 
+    private void writeXML() {}
+
+
 }
