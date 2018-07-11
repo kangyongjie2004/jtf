@@ -1,7 +1,8 @@
-package com.jd.jtf.toc;
+package com.jd.jtf.toc.service;
 
-import com.jd.jtf.toc.general.GeneralToc;
-import com.jd.jtf.toc.virtual.VirtualToc;
+import com.jd.jtf.toc.Toc;
+import com.jd.jtf.toc.impl.GeneralToc;
+import com.jd.jtf.toc.impl.VirtualToc;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,4 +1,4 @@
-package com.jd.jtf.toc.general;
+package com.jd.jtf.toc.impl;
 
 import com.jd.jtf.domain.order.IOrder;
 import com.jd.jtf.toc.Toc;

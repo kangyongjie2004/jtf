@@ -3,7 +3,6 @@ package com.jd.jtf.lifeservice.action;//package com.jd.jtf.lifeservice.action;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jd.jtf.domain.order.IOrder;
-import com.jd.jtf.domain.order.Order;
 import com.jd.jtf.toc.Toc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

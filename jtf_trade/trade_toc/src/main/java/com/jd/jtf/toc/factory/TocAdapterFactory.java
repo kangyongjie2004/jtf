@@ -1,6 +1,8 @@
-package com.jd.jtf.toc;
+package com.jd.jtf.toc.factory;
 
 import com.jd.jtf.domain.order.IOrder;
+import com.jd.jtf.toc.Toc;
+import com.jd.jtf.toc.service.TocsService;
 import org.eclipse.core.internal.runtime.AdapterManager;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.IAdapterManager;

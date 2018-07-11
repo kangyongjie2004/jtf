@@ -1,5 +1,7 @@
 package com.jd.jtf.domain.order;
 
+import com.jd.jtf.domain.order.impl.Order;
+
 public class OrderItem {
 
     private DrinkType drinkType;

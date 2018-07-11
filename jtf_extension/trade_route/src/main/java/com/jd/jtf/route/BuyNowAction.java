@@ -16,8 +16,6 @@ public class BuyNowAction {
     @Autowired
     private IOrder order;
 
-//    @Autowired
-//    private HelloService helloService;
 
     @ResponseBody
     @RequestMapping("/buy_general")

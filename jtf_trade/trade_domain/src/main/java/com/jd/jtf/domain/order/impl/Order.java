@@ -1,15 +1,18 @@
-package com.jd.jtf.domain.order;
+package com.jd.jtf.domain.order.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.Maps;
+import com.jd.jtf.domain.order.DrinkType;
+import com.jd.jtf.domain.order.IOrder;
+import com.jd.jtf.domain.order.OrderItem;
 import org.eclipse.core.runtime.PlatformObject;
 import org.springframework.stereotype.Service;
 
 @Service("order")
-public class Order extends PlatformObject implements IOrder{
+public class Order extends PlatformObject implements IOrder {
 
     private List<OrderItem> orderItems = new ArrayList<OrderItem>();
 
