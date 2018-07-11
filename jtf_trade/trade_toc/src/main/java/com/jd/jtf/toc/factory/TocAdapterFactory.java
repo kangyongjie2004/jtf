@@ -2,7 +2,7 @@ package com.jd.jtf.toc.factory;
 
 import com.jd.jtf.domain.order.IOrder;
 import com.jd.jtf.toc.Toc;
-import com.jd.jtf.toc.service.TocsService;
+import com.jd.jtf.toc.service.TocService;
 import org.eclipse.core.internal.runtime.AdapterManager;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.IAdapterManager;
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 public class TocAdapterFactory implements IAdapterFactory {
 
     @Resource
-    public TocsService tocsService;
+    public TocService tocService;
 
 
     @PostConstruct
@@ -31,9 +31,9 @@ public class TocAdapterFactory implements IAdapterFactory {
     public Object getAdapter(Object adaptableObject, Class adapterType) {
         if (adapterType == Toc.class) {
             IOrder order = (IOrder) adaptableObject;
-            Toc toc = tocsService.toc(order.getType());
+            Toc toc = tocService.toc(order.getType());
             if (toc== null) {
-                toc = tocsService.toc("general");
+                toc = tocService.toc("general");
             }
             return toc;
         }

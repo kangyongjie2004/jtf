@@ -5,7 +5,8 @@ import com.jd.jtf.toc.Toc;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GeneralToc  implements Toc {
+public class GenenalToc implements Toc {
+
 
     @Override
     public void setOrderConsignmentTimeout(IOrder order) {

@@ -5,7 +5,7 @@ import com.jd.jtf.toc.Toc;
 import org.springframework.stereotype.Service;
 
 @Service
-public class VirtualToc  implements Toc {
+public class FreshToc implements Toc {
 
 
     @Override
