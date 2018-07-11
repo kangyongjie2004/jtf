@@ -22,8 +22,6 @@ public class BuyNowAction {
     public JSONObject handleRequest() {
 
 
-//        Order order = new Order("general", 1);
-//        System.out.println(helloService.hello());
         order.setType("general");
         //toc接口通过order的getAdapter的方式返回，在上面toc模快里TocAdapterFactory里，
         // 解释了会根据order的type类型，返回对应的实现，这里会返回GenrealToc的实现。
