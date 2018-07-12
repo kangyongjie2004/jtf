@@ -4,7 +4,7 @@ import com.jd.jtf.domain.bean.OrderInfo;
 import org.eclipse.core.runtime.IAdaptable;
 
 
-public interface IOrderService extends IAdaptable {
+public interface IOrderService {
 
 
     public String getBusinessType();

@@ -1,5 +1,6 @@
 package com.jd.jtf.toc.factory;
 
+import com.jd.jtf.domain.bean.OrderInfo;
 import com.jd.jtf.domain.order.IOrderService;
 import com.jd.jtf.toc.plugin.TocService;
 import org.eclipse.core.internal.runtime.AdapterManager;
@@ -21,16 +22,17 @@ public class TocAdapterFactory implements IAdapterFactory {
     @PostConstruct
     public void init() {
 
+        System.out.println("TocAdapterFactory.........");
         IAdapterManager manager = AdapterManager.getDefault();
-        manager.registerAdapters(this, IOrderService.class);
+        manager.registerAdapters(this, OrderInfo.class);
     }
 
 
     @Override
     public Object getAdapter(Object adaptableObject, Class adapterType) {
         if (adapterType == TocService.class) {
-            IOrderService orderService = (IOrderService) adaptableObject;
-            TocService tocService = tocHelper.toc(orderService.getBusinessType());
+            OrderInfo orderInfo = (OrderInfo) adaptableObject;
+            TocService tocService = tocHelper.toc(orderInfo.getType());
             if (tocService== null) {
                 tocService = tocHelper.toc("general");
             }

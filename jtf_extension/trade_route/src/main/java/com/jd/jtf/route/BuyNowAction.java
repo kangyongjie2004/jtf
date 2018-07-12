@@ -25,11 +25,11 @@ public class BuyNowAction {
 
 
         OrderInfo orderInfo = orderService.getOrderInfo("111", type);
-        orderService.setBusinessType(orderInfo.getType());
+        orderInfo.setType(type);
 
         //toc接口通过order的getAdapter的方式返回，在上面toc模快里TocAdapterFactory里，
         // 解释了会根据order的type类型，返回对应的实现，这里会返回GenrealToc的实现。
-        TocService tocService = (TocService) orderService.getAdapter(TocService.class);
+        TocService tocService = (TocService) orderInfo.getAdapter(TocService.class);
 
         //订单bean里增加属性
         if (tocService != null) {

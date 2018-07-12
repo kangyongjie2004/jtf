@@ -2,9 +2,10 @@ package com.jd.jtf.domain.factory;
 
 
 
+import com.jd.jtf.domain.bean.OrderInfo;
 import com.jd.jtf.domain.helper.CouponHelper;
-import com.jd.jtf.domain.plugin.ICouponService;
 import com.jd.jtf.domain.order.IOrderService;
+import com.jd.trade.service.ICouponService;
 import org.eclipse.core.internal.runtime.AdapterManager;
 import org.eclipse.core.runtime.IAdapterFactory;
 import org.eclipse.core.runtime.IAdapterManager;
@@ -23,17 +24,17 @@ public class CouponAdapterFactory implements IAdapterFactory {
 
     @PostConstruct
     public void init() {
-
+        System.out.println("CouponAdapterFactory.........");
         IAdapterManager manager = AdapterManager.getDefault();
-        manager.registerAdapters(this, IOrderService.class);
+        manager.registerAdapters(this, OrderInfo.class);
     }
 
 
     @Override
     public Object getAdapter(Object adaptableObject, Class adapterType) {
         if (adapterType == ICouponService.class) {
-            IOrderService orderService = (IOrderService) adaptableObject;
-            ICouponService couponService = couponHelper.getCouponService(orderService.getBusinessType());
+            OrderInfo orderInfo = (OrderInfo) adaptableObject;
+            ICouponService couponService = couponHelper.getCouponService(orderInfo.getType());
             if (couponService== null) {
                 couponService = couponHelper.getCouponService("general");
             }

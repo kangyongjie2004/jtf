@@ -1,14 +1,13 @@
 package com.jd.jtf.domain.order.impl;
 
 import com.jd.jtf.domain.bean.OrderInfo;
-import com.jd.jtf.domain.plugin.ICouponService;
 import com.jd.jtf.domain.order.IOrderService;
-import org.eclipse.core.runtime.PlatformObject;
+import com.jd.trade.service.ICouponService;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class OrderService extends PlatformObject implements IOrderService {
+public class OrderService  implements IOrderService {
 
 
     private String businessType;
@@ -39,10 +38,14 @@ public class OrderService extends PlatformObject implements IOrderService {
 
 
     public float getCoupon(String orderId, String orderType) {
-        this.setBusinessType(orderType);
-        ICouponService couponService = (ICouponService)this.getAdapter(ICouponService.class);
-        OrderInfo orderInfo = getOrderInfo(orderId, orderType) ;
-        return couponService.getCoupon(orderInfo);
+
+        OrderInfo orderInfo = new OrderInfo();
+        orderInfo.setOrderId(orderId);
+        orderInfo.setType(orderType);
+
+
+        ICouponService couponService = (ICouponService)orderInfo.getAdapter(ICouponService.class);
+        return couponService.getCoupon("1111");
     }
 
 

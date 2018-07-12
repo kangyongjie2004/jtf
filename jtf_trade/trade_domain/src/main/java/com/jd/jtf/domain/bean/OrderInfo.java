@@ -1,10 +1,11 @@
 package com.jd.jtf.domain.bean;
 
 import com.google.common.collect.Maps;
+import org.eclipse.core.runtime.PlatformObject;
 
 import java.util.Map;
 
-public class OrderInfo {
+public class OrderInfo extends PlatformObject {
 
 
     private String orderId;//订单编号
