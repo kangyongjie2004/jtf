@@ -14,7 +14,6 @@
     <modules>
         <module>trade_domain</module>
         <module>trade_toc</module>
-        <module>trade_ump</module>
     </modules>
 
 

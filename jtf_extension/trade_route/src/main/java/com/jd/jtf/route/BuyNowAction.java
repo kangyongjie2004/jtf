@@ -1,8 +1,9 @@
 package com.jd.jtf.route;
 
 import com.alibaba.fastjson.JSONObject;
-import com.jd.jtf.domain.order.IOrder;
-import com.jd.jtf.toc.Toc;
+import com.jd.jtf.domain.bean.OrderInfo;
+import com.jd.jtf.domain.order.IOrderService;
+import com.jd.jtf.toc.plugin.TocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,31 +15,38 @@ public class BuyNowAction {
 
 
     @Autowired
-    private IOrder order;
+    private IOrderService orderService;
 
 
     @ResponseBody
     @RequestMapping("/toc")
     public JSONObject handleRequest(String type) {
 
-        order.setType(type);
+
+
+        OrderInfo orderInfo = orderService.getOrderInfo("111", type);
+        orderService.setBusinessType(orderInfo.getType());
 
         //toc接口通过order的getAdapter的方式返回，在上面toc模快里TocAdapterFactory里，
         // 解释了会根据order的type类型，返回对应的实现，这里会返回GenrealToc的实现。
-        Toc toc = (Toc) order.getAdapter(Toc.class);
+        TocService tocService = (TocService) orderService.getAdapter(TocService.class);
 
-        if (toc != null) {
-            toc.setOrderConfirmTimeout(order);
-            toc.setOrderConsignmentTimeout(order);
+        //订单bean里增加属性
+        if (tocService != null) {
+            tocService.setOrderConfirmTimeout(orderInfo);
+            tocService.setOrderConsignmentTimeout(orderInfo);
         }
 
-//        Ump ump = (Ump)order.getAdapter(Ump.class);
-//        if (ump!=null) {
-//            ump.setOrderPromation(order);
-//        }
+        Boolean b = tocService.isTimeout(orderInfo);
 
-        int consignment_timeout = toc.getOrderConsignmentTimeout(order);
-        int confirm_timeout = toc.getOrderConfirmTimeout(order);
+
+
+
+        OrderInfo orderInfo1 = orderService.CreateOrder("1111",type);
+
+
+        int consignment_timeout = tocService.getOrderConsignmentTimeout(orderInfo);
+        int confirm_timeout = tocService.getOrderConfirmTimeout(orderInfo);
 
 //        float promotion = ump.getOrderPromation(order);
 
@@ -51,4 +59,5 @@ public class BuyNowAction {
 
         return jo;
     }
+
 }
