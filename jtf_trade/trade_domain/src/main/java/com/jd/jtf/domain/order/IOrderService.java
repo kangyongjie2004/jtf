@@ -1,7 +1,6 @@
 package com.jd.jtf.domain.order;
 
 import com.jd.jtf.domain.bean.OrderInfo;
-import org.eclipse.core.runtime.IAdaptable;
 
 
 public interface IOrderService {

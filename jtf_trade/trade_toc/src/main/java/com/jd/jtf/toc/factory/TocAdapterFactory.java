@@ -1,11 +1,10 @@
 package com.jd.jtf.toc.factory;
 
+import com.jd.jtf.common.adaptable.AdapterManager;
+import com.jd.jtf.common.adaptable.IAdapterFactory;
+import com.jd.jtf.common.adaptable.IAdapterManager;
 import com.jd.jtf.domain.bean.OrderInfo;
-import com.jd.jtf.domain.order.IOrderService;
 import com.jd.jtf.toc.plugin.TocService;
-import org.eclipse.core.internal.runtime.AdapterManager;
-import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.core.runtime.IAdapterManager;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
