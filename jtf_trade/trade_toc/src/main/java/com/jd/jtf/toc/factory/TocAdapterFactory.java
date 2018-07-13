@@ -28,7 +28,7 @@ public class TocAdapterFactory implements IAdapterFactory {
 
 
     @Override
-    public Object getAdapter(Object adaptableObject, Class adapterType) {
+    public TocService  getAdapter(Object adaptableObject, Class adapterType) {
         if (adapterType == TocService.class) {
             OrderInfo orderInfo = (OrderInfo) adaptableObject;
             TocService tocService = tocHelper.toc(orderInfo.getType());
