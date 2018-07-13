@@ -1,14 +1,11 @@
 package com.jd.jtf.domain.factory;
 
-
-
+import com.jd.jtf.common.adaptable.AdapterManager;
+import com.jd.jtf.common.adaptable.IAdapterFactory;
+import com.jd.jtf.common.adaptable.IAdapterManager;
 import com.jd.jtf.domain.bean.OrderInfo;
 import com.jd.jtf.domain.helper.CouponHelper;
-import com.jd.jtf.domain.order.IOrderService;
 import com.jd.trade.service.ICouponService;
-import org.eclipse.core.internal.runtime.AdapterManager;
-import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.core.runtime.IAdapterManager;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
