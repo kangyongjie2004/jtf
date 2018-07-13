@@ -16,6 +16,7 @@
     </modules>
     <properties>
         <spring.version>4.3.7.RELEASE</spring.version>
+        <junit.version>4.8.2</junit.version>
     </properties>
 
     <dependencies>
@@ -111,7 +112,12 @@
             <version>${spring.version}</version>
         </dependency>
 
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
