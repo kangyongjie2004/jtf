@@ -13,6 +13,7 @@
         <module>jtf_trade</module>
         <module>jtf_extension</module>
         <module>demo</module>
+        <module>demo-plugin</module>
     </modules>
     <properties>
         <spring.version>4.3.7.RELEASE</spring.version>

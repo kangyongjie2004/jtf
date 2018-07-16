@@ -66,4 +66,25 @@ public class JaxbUtil {
 
         return t;
     }
+
+    /**
+     * 将XML转换成javabean
+     *
+     * @param url
+     * @param c
+     * @param <T>
+     * @return
+    */
+    public static <T> T convertToJavaBean(java.net.URL url, Class<T> c) {
+        T t = null;
+        try {
+            JAXBContext context = JAXBContext.newInstance(c);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            t = (T) unmarshaller.unmarshal(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return t;
+    }
 }  
