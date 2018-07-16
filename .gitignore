@@ -7,7 +7,6 @@
 *target*
 *.bak
 *data*
-*test*
 *.log
 *logs*
 *file*

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <id>com.jd.jtf.demo</id>
+    <order>0</order>
+    <extension-point id="de.vogella.extensionpoint.greeters"
+                     name="Greeters"
+                     desc="test"
+                     author="kangyj">
+        <extensions>
+            <extension>com.jd.jtf.order.OrderInfo</extension>
+            <extension>com.jd.jtf.order.TopLifeOrderInfo</extension>
+        </extensions>
+    </extension-point>
+</plugin>
