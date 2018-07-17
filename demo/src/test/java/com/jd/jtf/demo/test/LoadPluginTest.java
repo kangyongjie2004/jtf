@@ -37,6 +37,7 @@ public class LoadPluginTest {
         Class<?> clazz = urlClassLoader.loadClass("com.jd.jtf.demo.plugin.PluginTest");
 
         URL purl = urlClassLoader.findResource("plugin.xml");
+//        java.util.Enumeration<java.net.URL> urls = urlClassLoader.findResources("plugin.xml");
 
 //        Plugin plugin = JaxbUtil.converyToJavaBean(purl.getFile(),Plugin.class);
         Plugin plugin = JaxbUtil.convertToJavaBean(purl,Plugin.class);
