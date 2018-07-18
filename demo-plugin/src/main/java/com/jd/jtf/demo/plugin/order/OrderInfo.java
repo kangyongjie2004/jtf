@@ -2,10 +2,11 @@ package com.jd.jtf.demo.plugin.order;
 
 import com.google.common.collect.Maps;
 import com.jd.jtf.common.adaptable.PlatformObject;
+import com.jd.jtf.platform.integration.identifier.BusinessType;
 
 import java.util.Map;
 
-public class OrderInfo extends PlatformObject {
+public class OrderInfo extends PlatformObject implements BusinessType{
 
 
     private String orderId;//订单编号
@@ -90,5 +91,15 @@ public class OrderInfo extends PlatformObject {
 
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    @Override
+    public String setBusinessType() {
+        return null;
+    }
+
+    @Override
+    public String getBusinessType() {
+        return null;
     }
 }

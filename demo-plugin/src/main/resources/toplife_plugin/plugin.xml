@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- toplife plugin.xml-->
 <plugin id="toplife" name="toplife plugin" version="1.0">
-    <!-- 暴露扩展点,可插入点-->
+<!-- 暴露扩展点,可插入点-->
 
-    <!-- 扩展点实现-->
-    <extension pluginid="order" point="tocService">
-        <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeTocService"/>
-    </extension>
-    <extension pluginid="order" point="couponService">
-        <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeCouponService"/>
-    </extension>
+<!-- 扩展点实现-->
+<extension pluginid="order" point="tocService">
+    <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeTocService"/>
+</extension>
+<extension pluginid="order" point="couponService">
+    <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeCouponService"/>
+</extension>
 </plugin>
