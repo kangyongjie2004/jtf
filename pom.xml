@@ -18,6 +18,7 @@
     <properties>
         <spring.version>4.3.7.RELEASE</spring.version>
         <junit.version>4.8.2</junit.version>
+        <slf4j-api.version>1.7.6</slf4j-api.version>
     </properties>
 
     <dependencies>
@@ -119,6 +120,26 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- log begin-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+        <!-- log end-->
     </dependencies>
 
     <build>

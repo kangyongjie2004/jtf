@@ -35,6 +35,7 @@ public class Exe {
 
         for (Resource resource : resources){
             System.out.println(resource.getURL());
+            System.out.println(resource.getFile().getPath());
         }
 
     }
