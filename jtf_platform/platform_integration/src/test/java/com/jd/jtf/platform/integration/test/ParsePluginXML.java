@@ -22,8 +22,8 @@ public class ParsePluginXML {
         Assert.isNotNull(plugin);
         System.out.println(plugin.getGroupId());
         System.out.println(plugin.getExtensionPoint().size());
-        System.out.println(plugin.getExtensionImpl().size());
-        System.out.println(plugin.getExtensionImpl().get(0).getBussinessType());
+        System.out.println(plugin.getExtensionPoint().size());
+        System.out.println(plugin.getExtensionPoint().get(0).getExtensionImpl().get(0).getBussinessType());
     }
 
 }

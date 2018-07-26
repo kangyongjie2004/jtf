@@ -10,7 +10,7 @@ import com.jd.jtf.demo.plugin.order.inter.ITocService;
  * @author kangyongjie E-mail: kangyongjie@jd.com
  * @version Created ：2018/7/17 15:04
  */
-public class GeneraTocService implements ITocService{
+public class GeneralTocService implements ITocService{
 
     @Override
     public int getTimeout() {

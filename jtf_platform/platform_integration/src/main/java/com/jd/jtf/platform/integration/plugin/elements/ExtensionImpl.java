@@ -18,20 +18,11 @@ import javax.xml.bind.annotation.XmlAttribute;
  * @version Created ：2018/7/18 17:55
  */
 public class ExtensionImpl {
-    private String refid;
     private String bussinessType;
     private String impl;
     private String desc;
     private String author;
 
-    @XmlAttribute
-    public String getRefid() {
-        return refid;
-    }
-
-    public void setRefid(String refid) {
-        this.refid = refid;
-    }
     @XmlAttribute
     public String getBussinessType() {
         return bussinessType;

@@ -1,6 +1,8 @@
 package com.jd.jtf.platform.integration.plugin.elements;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import java.util.List;
 
 /**
  * =========================================================
@@ -18,21 +20,11 @@ import javax.xml.bind.annotation.XmlAttribute;
  */
 public class ExtensionPoint {
 
-    private String id;
     private String desc;
     private String interfaze;
     private String author;
 
-
-    @XmlAttribute
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
+    private List<ExtensionImpl> extensionImpl;
 
     @XmlAttribute(name = "interface")
     public String getInterfaze() {
@@ -57,5 +49,14 @@ public class ExtensionPoint {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @XmlElement(name = "extensionImpl-impl")
+    public List<ExtensionImpl> getExtensionImpl() {
+        return extensionImpl;
+    }
+
+    public void setExtensionImpl(List<ExtensionImpl> extensionImpl) {
+        this.extensionImpl = extensionImpl;
     }
 }

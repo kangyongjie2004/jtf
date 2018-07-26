@@ -4,10 +4,10 @@
 <!-- 暴露扩展点,可插入点-->
 
 <!-- 扩展点实现-->
-<extension pluginid="order" point="tocService">
+<extensionImpl pluginid="order" point="tocService">
     <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeTocService"/>
-</extension>
-<extension pluginid="order" point="couponService">
+</extensionImpl>
+<extensionImpl pluginid="order" point="couponService">
     <adapter bussinessType="toplife" impl="com.jd.jtf.demo.plugin.order.ToplifeCouponService"/>
-</extension>
+</extensionImpl>
 </plugin>

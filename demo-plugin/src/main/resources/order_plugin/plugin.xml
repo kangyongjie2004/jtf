@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- order plugin.xml-->
-<plugin id="order" name="order plugin" version="1.0" extension-from="com.jd.jtf.demo.plugin.order.inter.IOrderInfo">
+<plugin id="order" name="order plugin" version="1.0" extensionImpl-from="com.jd.jtf.demo.plugin.order.inter.IOrderInfo">
 
     <!-- 暴露扩展点,可插入点-->
-    <extension-point id="tocService" name="TocService" interface="com.jd.jtf.demo.plugin.order.inter.ITocService"/>
-    <extension-point id="couponService" name="CoupService" interface="com.jd.jtf.demo.plugin.order.inter.ICouponService"/>
+    <extensionImpl-point id="tocService" name="TocService" interface="com.jd.jtf.demo.plugin.order.inter.ITocService"/>
+    <extensionImpl-point id="couponService" name="CoupService" interface="com.jd.jtf.demo.plugin.order.inter.ICouponService"/>
 
     <!-- 扩展点实现-->
-    <extension pluginid="order" point="tocService">
-        <adapter bussinessType="general" impl="com.jd.jtf.demo.plugin.order.GeneraTocService"/>
-    </extension>
-    <extension pluginid="order" point="couponService">
+    <extensionImpl pluginid="order" point="tocService">
+        <adapter bussinessType="general" impl="com.jd.jtf.demo.plugin.order.GeneralTocService"/>
+    </extensionImpl>
+    <extensionImpl pluginid="order" point="couponService">
         <adapter bussinessType="general" impl="com.jd.jtf.demo.plugin.order.GeneralCouponService"/>
-    </extension>
+    </extensionImpl>
 </plugin>

@@ -2,13 +2,13 @@
 <!--<plugin>-->
     <!--<id>com.jd.jtf.demo</id>-->
     <!--<order>0</order>-->
-    <!--<extension-point id="de.vogella.extensionpoint.greeters"-->
+    <!--<extensionImpl-point id="de.vogella.extensionpoint.greeters"-->
                      <!--name="Greeters"-->
                      <!--desc="test"-->
                      <!--author="kangyj">-->
         <!--<extensions>-->
-            <!--<extension>com.jd.jtf.order.OrderInfo</extension>-->
-            <!--<extension>com.jd.jtf.order.TopLifeOrderInfo</extension>-->
+            <!--<extensionImpl>com.jd.jtf.order.OrderInfo</extensionImpl>-->
+            <!--<extensionImpl>com.jd.jtf.order.TopLifeOrderInfo</extensionImpl>-->
         <!--</extensions>-->
-    <!--</extension-point>-->
+    <!--</extensionImpl-point>-->
 <!--</plugin>-->

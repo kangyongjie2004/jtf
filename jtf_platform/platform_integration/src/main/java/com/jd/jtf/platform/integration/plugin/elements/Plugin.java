@@ -20,13 +20,24 @@ import java.util.List;
  */
 @XmlRootElement(name = "plugin")
 public class Plugin {
+    /**
+     * 插件坐标：组
+     */
     private String groupId;
+    /**
+     * 插件坐标：artifactId
+     */
     private String artifactId;
+    /**
+     * 插件坐标：版本
+     */
     private String version;
     private String desc;
     private String author;
-
-    private List<ExtensionImpl> extensionImpl;
+    /**
+     * 被扩展的业务
+     */
+    private String isExtended;
 
     private List<ExtensionPoint> extensionPoint;
 
@@ -76,13 +87,13 @@ public class Plugin {
         this.author = author;
     }
 
-    @XmlElement(name = "extensionImpl-impl")
-    public List<ExtensionImpl> getExtensionImpl() {
-        return extensionImpl;
+    @XmlAttribute
+    public String getIsExtended() {
+        return isExtended;
     }
 
-    public void setExtensionImpl(List<ExtensionImpl> extensionImpl) {
-        this.extensionImpl = extensionImpl;
+    public void setIsExtended(String isExtended) {
+        this.isExtended = isExtended;
     }
 
     @XmlElement(name = "extensionImpl-point")

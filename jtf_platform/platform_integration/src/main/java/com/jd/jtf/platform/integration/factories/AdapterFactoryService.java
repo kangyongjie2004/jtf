@@ -3,18 +3,17 @@ package com.jd.jtf.platform.integration.factories;
 import com.jd.jtf.common.adaptable.AdapterManager;
 import com.jd.jtf.common.adaptable.IAdapterFactory;
 import com.jd.jtf.common.adaptable.IAdapterManager;
-import com.jd.jtf.domain.bean.OrderInfo;
-import com.jd.jtf.platform.integration.identifier.BusinessType;
 import com.jd.jtf.platform.integration.plugin.PluginService;
-import com.jd.jtf.toc.plugin.TocService;
+import com.jd.jtf.platform.integration.plugin.elements.ExtensionImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
-
-import static javafx.scene.input.KeyCode.T;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 //实现一个TocAdapterFactory工厂类，用来向平台注册IOrder的TOC扩展
 //这个类会将Toc接口注册到AdapterManger里，这样IOrder就可以通过getAdapter方法得到toc相关的功能。
@@ -35,30 +34,87 @@ public class AdapterFactoryService {
     public void init() {
 
         log.info("### AdapterFactories  initializing .........");
-        IAdapterManager manager = AdapterManager.getDefault();
-        manager.registerAdapters(this, OrderInfo.class);
+        buildFactories();
         log.info("### AdapterFactories  initialized .........");
     }
 
+//    /**
+//     * 装配插件、建立插件之间的依赖关系
+//     * @param adaptableObject
+//     * @param adapterType
+//     * @return
+//     */
+//    public boolean assemblePlugins () {
+//
+//    }
+
+
     /**
-     * 装配插件、建立插件之间的依赖关系
-     * @param adaptableObject
-     * @param adapterType
+     * 构建所有扩展的工厂：每个被扩展的业务定义为一个工厂；多个扩展点共享一个工厂。
+     *
      * @return
      */
-    public boolean assemblePlugins () {
+    public boolean buildFactories() {
 
+        Map<String, Map<String, List<ExtensionImpl>>> dependencies = pluginService.buildDependencies();
+
+        log.info("### AdapterFactories  initializing .........");
+        IAdapterManager manager = AdapterManager.getDefault();
+
+        for (Map.Entry<String, Map<String, List<ExtensionImpl>>> entry : dependencies.entrySet()) {
+
+            AdapterFactory adapterFactory = new AdapterFactory();
+
+            Map<String, String> bussinessTypeMapping = new HashMap<String, String>();
+
+            try {
+                String isExtended = entry.getKey();
+                Class isExtendedClazz = Class.forName(isExtended);
+
+                for (Map.Entry<String, List<ExtensionImpl>> subEntry : entry.getValue().entrySet()) {
+
+                    String extendPointInterface = subEntry.getKey();
+                    Class extendPointInterfaceClazz = Class.forName(extendPointInterface);
+
+                    adapterFactory.addClass(extendPointInterfaceClazz);
+
+                    //注册业务身份
+                    for (ExtensionImpl extensionImpl : subEntry.getValue()) {
+                        bussinessTypeMapping.put(subEntry.getKey() + extensionImpl.getBussinessType(), extensionImpl.getImpl());
+                    }
+
+
+                    log.info("### AdapterFactories  " +
+                                    "initialized,isExtended class is:{},extendPointInterface is:{}",
+                            isExtended, extendPointInterface);
+                }
+
+                manager.registerAdapters(adapterFactory, isExtendedClazz);
+
+                this.m.put(adapterFactory, bussinessTypeMapping);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+                throw new RuntimeException("### init class failure !!! please check !");
+            }
+
+        }
+
+        log.info("### AdapterFactories  initialized successfully .........");
+
+        return true;
     }
 
+    private static final Map<IAdapterFactory, Map<String, String>> m = new HashMap<IAdapterFactory, Map<String, String>>();
 
     /**
-     * 构建所有扩展的工厂
+     * 根据工厂对象 和 接口全称+业务身份 获取具体的实现类字符串。
      *
-     * @param classes
+     * @param factory
+     * @param interfazeBussinessType
      * @return
      */
-    public boolean buildFactories(Class[] classes){
-        this.classes = classes;
-        return true;
+    public static String getBusinessTypeByFactory(IAdapterFactory factory, String interfazeBussinessType) {
+        String impl = m.get(factory).get(interfazeBussinessType);
+        return impl == null ? "" : impl;
     }
 }
