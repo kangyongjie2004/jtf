@@ -9,50 +9,28 @@ import java.util.List;
  * =========================================================
  * 京东 - 技术拓展研发部 - 智能研发组
  * 类说明：
- * <plugin id="order" name="order plugin" version="1.0">
-
- <!-- 暴露扩展点,可插入点-->
- <extension-point id="tocService" name="TocService" interface="com.jd.jtf.demo.plugin.order.inter.ITocService"/>
- <extension-point id="couponService" name="CoupService" interface="com.jd.jtf.demo.plugin.order.inter.ICouponService"/>
-
- <!-- 扩展点实现-->
- <extension pluginid="order" point="tocService">
- <adapter bussinessType="general" impl="com.jd.jtf.demo.plugin.order.GeneraTocService"/>
- </extension>
- <extension pluginid="order" point="couponService">
- <adapter bussinessType="general" impl="com.jd.jtf.demo.plugin.order.GeneralCouponService"/>
- </extension>
- </plugin>
+ * groupId="com.jd.jpf"
+ * artifactId="order_plugin"
+ * version="1.0"
+ * desc="test"
+ * author="kyj"
  *
  * @author kangyongjie E-mail: kangyongjie@jd.com
  * @version Created ：2018/7/18 17:51
  */
-@XmlRootElement(name="plugin")
+@XmlRootElement(name = "plugin")
 public class Plugin {
-    private String id;
-    private String name;
+    private String groupId;
+    private String artifactId;
     private String version;
-    private String extensionFrom;
+    private String desc;
+    private String author;
 
-    private List<Extension> extension;
+    private List<ExtensionImpl> extensionImpl;
 
     private List<ExtensionPoint> extensionPoint;
-    @XmlAttribute
-    public String getId() {
-        return id;
-    }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-    @XmlAttribute
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
     @XmlAttribute
     public String getVersion() {
         return version;
@@ -62,25 +40,52 @@ public class Plugin {
         this.version = version;
     }
 
-    @XmlAttribute(name = "extension-from")
-    public String getExtensionFrom() {
-        return extensionFrom;
+    @XmlAttribute
+    public String getGroupId() {
+        return groupId;
     }
 
-    public void setExtensionFrom(String extensionFrom) {
-        this.extensionFrom = extensionFrom;
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
     }
 
-    @XmlElement(name = "extension")
-    public List<Extension> getExtension() {
-        return extension;
+    @XmlAttribute
+    public String getArtifactId() {
+        return artifactId;
     }
 
-    public void setExtension(List<Extension> extension) {
-        this.extension = extension;
+    public void setArtifactId(String artifactId) {
+        this.artifactId = artifactId;
     }
 
-    @XmlElement(name = "extension-point")
+    @XmlAttribute
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    @XmlAttribute
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    @XmlElement(name = "extensionImpl-impl")
+    public List<ExtensionImpl> getExtensionImpl() {
+        return extensionImpl;
+    }
+
+    public void setExtensionImpl(List<ExtensionImpl> extensionImpl) {
+        this.extensionImpl = extensionImpl;
+    }
+
+    @XmlElement(name = "extensionImpl-point")
     public List<ExtensionPoint> getExtensionPoint() {
         return extensionPoint;
     }
@@ -88,6 +93,4 @@ public class Plugin {
     public void setExtensionPoint(List<ExtensionPoint> extensionPoint) {
         this.extensionPoint = extensionPoint;
     }
-
-
 }

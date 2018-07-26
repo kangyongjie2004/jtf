@@ -20,10 +20,10 @@ public class ParsePluginXML {
         System.out.println("=====================");
         Plugin plugin = JaxbUtil.converyToJavaBean("src\\test\\resources\\plugin.xml",Plugin.class);
         Assert.isNotNull(plugin);
-        System.out.println(plugin.getId());
+        System.out.println(plugin.getGroupId());
         System.out.println(plugin.getExtensionPoint().size());
-        System.out.println(plugin.getExtension().size());
-        System.out.println(plugin.getExtension().get(0).getAdapter().getBussinessType());
+        System.out.println(plugin.getExtensionImpl().size());
+        System.out.println(plugin.getExtensionImpl().get(0).getBussinessType());
     }
 
 }

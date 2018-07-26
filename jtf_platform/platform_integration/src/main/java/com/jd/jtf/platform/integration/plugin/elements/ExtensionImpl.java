@@ -6,41 +6,47 @@ import javax.xml.bind.annotation.XmlAttribute;
  * =========================================================
  * 京东 - 技术拓展研发部 - 智能研发组
  * 类说明：
- <extension-point
- id="priceService"
- interface="com.jd.jtf.point.IPriceService"
+ <extension-impl
+
+ refid="priceService"
+ bussinessType="fresh"
+ impl="com.jd.jtf.plugin.FreshPriceService"
  desc="test test"
  author="kyj"/>
  *
- *
  * @author kangyongjie E-mail: kangyongjie@jd.com
- * @version Created ：2018/7/18 17:52
+ * @version Created ：2018/7/18 17:55
  */
-public class ExtensionPoint {
-
-    private String id;
+public class ExtensionImpl {
+    private String refid;
+    private String bussinessType;
+    private String impl;
     private String desc;
-    private String interfaze;
     private String author;
 
-
     @XmlAttribute
-    public String getId() {
-        return id;
+    public String getRefid() {
+        return refid;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setRefid(String refid) {
+        this.refid = refid;
+    }
+    @XmlAttribute
+    public String getBussinessType() {
+        return bussinessType;
     }
 
-
-    @XmlAttribute(name = "interface")
-    public String getInterfaze() {
-        return interfaze;
+    public void setBussinessType(String bussinessType) {
+        this.bussinessType = bussinessType;
+    }
+    @XmlAttribute
+    public String getImpl() {
+        return impl;
     }
 
-    public void setInterfaze(String interfaze) {
-        this.interfaze = interfaze;
+    public void setImpl(String impl) {
+        this.impl = impl;
     }
     @XmlAttribute
     public String getDesc() {
