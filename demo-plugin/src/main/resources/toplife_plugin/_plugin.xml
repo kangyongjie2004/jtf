@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- toplife plugin.xml-->
+<!-- toplife _plugin.xml-->
 <plugin id="toplife" name="toplife plugin" version="1.0">
 <!-- 暴露扩展点,可插入点-->
 

@@ -13,10 +13,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>platform_common</module>
-        <module>platform_core</module>
+        <!--<module>platform_core</module>-->
         <module>platform_integration</module>
-        <module>platform_runtime</module>
-        <module>platform_web</module>
+        <!--<module>platform_runtime</module>-->
+        <!--<module>platform_web</module>-->
     </modules>
 
 

@@ -54,7 +54,8 @@ public class AdapterFactory implements IAdapterFactory {
 
     @Override
     public Class[] getAdapterList() {
-        return (Class[])this.classes.toArray();
+        Class[] arr = this.classes.toArray(new Class[classes.size()]);
+        return arr;
     }
 
     /**

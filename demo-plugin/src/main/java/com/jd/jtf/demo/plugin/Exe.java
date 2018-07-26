@@ -17,9 +17,9 @@ import java.io.IOException;
 public class Exe {
     public static void main(String[] args) throws IOException {
 //        System.out.println(Thread.currentThread().getContextClassLoader());
-//        URL r = Thread.currentThread().getContextClassLoader().getResource("**/plugin.xml");
+//        URL r = Thread.currentThread().getContextClassLoader().getResource("**/_plugin.xml");
 //        System.out.println(r.getFile());
-//        Enumeration<URL> r = Thread.currentThread().getContextClassLoader().getResource("plugin.xml");
+//        Enumeration<URL> r = Thread.currentThread().getContextClassLoader().getResource("_plugin.xml");
 //        System.out.println(r.hasMoreElements());
 //        while(r.hasMoreElements()){
 //            System.out.println(r.nextElement().getFile());
