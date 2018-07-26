@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.List;
  * @author kangyongjie E-mail: kangyongjie@jd.com
  * @version Created ：2018/7/18 17:15
  */
-//TODO
+@Service
 public class PluginService {
 
     private static final Logger log = LoggerFactory.getLogger(PluginService.class);

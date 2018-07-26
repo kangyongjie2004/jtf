@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- order plugin.xml-->
-<plugin id="order" name="order plugin" version="1.0">
+<plugin id="order" name="order plugin" version="1.0" extension-from="com.jd.jtf.demo.plugin.order.inter.IOrderInfo">
 
     <!-- 暴露扩展点,可插入点-->
     <extension-point id="tocService" name="TocService" interface="com.jd.jtf.demo.plugin.order.inter.ITocService"/>

@@ -32,6 +32,7 @@ public class Plugin {
     private String id;
     private String name;
     private String version;
+    private String extensionFrom;
 
     private List<Extension> extension;
 
@@ -61,6 +62,15 @@ public class Plugin {
         this.version = version;
     }
 
+    @XmlAttribute(name = "extension-from")
+    public String getExtensionFrom() {
+        return extensionFrom;
+    }
+
+    public void setExtensionFrom(String extensionFrom) {
+        this.extensionFrom = extensionFrom;
+    }
+
     @XmlElement(name = "extension")
     public List<Extension> getExtension() {
         return extension;
@@ -78,4 +88,6 @@ public class Plugin {
     public void setExtensionPoint(List<ExtensionPoint> extensionPoint) {
         this.extensionPoint = extensionPoint;
     }
+
+
 }

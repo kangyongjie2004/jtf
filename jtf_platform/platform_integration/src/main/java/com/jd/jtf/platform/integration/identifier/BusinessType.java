@@ -12,9 +12,10 @@ package com.jd.jtf.platform.integration.identifier;
 public interface BusinessType {
     /**
      * 设置业务身份
+     * @param businessType
      * @return
      */
-    String setBusinessType();
+    boolean setBusinessType(String businessType);
 
     /**
      * 获取业务身份
