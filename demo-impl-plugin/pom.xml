@@ -18,7 +18,40 @@
         </dependency>
     </dependencies>
 
+    <!-- <profiles> -->
+    <profiles>
+        <profile>
+            <id>coupon</id>
+            <activation>
+                <property>
+                    <name>coupon</name>
+                </property>
+            </activation>
+            <properties>
+                <project.build.exlude>**/order_toc_plugin/plugin.xml</project.build.exlude>
+                <project.build.finalName>coupon</project.build.finalName>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>toc</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>toc</name>
+                </property>
+            </activation>
+            <properties>
+                <project.build.exlude>**/order_coupon_plugin/plugin.xml</project.build.exlude>
+                <project.build.finalName>toc</project.build.finalName>
+            </properties>
+        </profile>
+    </profiles>
+
+
+
     <build>
+        <finalName>${project.build.finalName}</finalName>
         <plugins>
             <!-- maven-shade-plugin -->
             <!-- 打包方式：mvn package -->
@@ -62,7 +95,7 @@
                     </archive>
                     <excludes>
                         <exlude>**/spring-*.xml</exlude>
-                        <!--<exlude>**/*.xml</exlude>-->
+                        <exlude>${project.build.exlude}</exlude>
                         <exlude>**/*.properties</exlude>
                     </excludes>
                 </configuration>
