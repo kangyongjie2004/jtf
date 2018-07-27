@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+        groupId="com.jd.jtf"
+        artifactId="order_plugin"
+        version="1.0"
+        isExtended="com.jd.jtf.demo.plugin.order.inter.IOrderInfo"
+        desc="base order application"
+        author="kyj"
+
+>
+    <extensionImpl-point
+            interface="com.jd.jtf.demo.plugin.order.inter.ICouponService"
+            desc="TocService ext Interface"
+            author="kyj">
+
+        <extensionImpl-impl
+                bussinessType="general"
+                impl="com.jd.jtf.demo.plugin.order.GeneralCouponService"
+                desc="TocService ext Implement"
+                author="kyj"/>
+        <extensionImpl-impl
+                bussinessType="fresh"
+                impl="com.jd.jtf.demo.plugin.order.ToplifeCouponService"
+                desc="TocService ext Implement"
+                author="kyj"/>
+
+    </extensionImpl-point>
+
+
+    <!--<extensionImpl-impl pluginid="order"-->
+    <!--refid="priceService"-->
+    <!--bussinessType="wanjia"-->
+    <!--impl="com.jd.jtf.plugin.WanjiaPriceService"-->
+    <!--desc="test test"-->
+    <!--author="kyj"/>-->
+</plugin>
+
+
+

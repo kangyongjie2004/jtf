@@ -1,4 +1,4 @@
-package com.jd.jtf.demo.plugin.order;
+package order;
 
 import com.jd.jtf.demo.plugin.order.inter.ICouponService;
 

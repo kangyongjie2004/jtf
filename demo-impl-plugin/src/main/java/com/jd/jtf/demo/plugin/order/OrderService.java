@@ -1,5 +1,6 @@
-package com.jd.jtf.demo.plugin.order;
+package order;
 
+import com.jd.jtf.demo.plugin.order.OrderInfo;
 import com.jd.jtf.demo.plugin.order.inter.IOrderService;
 
 /**

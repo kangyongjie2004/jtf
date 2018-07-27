@@ -14,6 +14,7 @@
         <!--<module>jtf_extension</module>-->
         <module>demo</module>
         <module>demo-plugin</module>
+        <module>demo-impl-plugin</module>
     </modules>
     <properties>
         <spring.version>4.3.7.RELEASE</spring.version>
